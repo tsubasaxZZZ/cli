@@ -442,7 +442,8 @@ func main() {
     },
   }
 
-  sort.Sort(cli.FlagsByName(app.Flags))
+  sort.Sort(cli.
+  ByName(app.Flags))
   sort.Sort(cli.CommandsByName(app.Commands))
 
   err := app.Run(os.Args)
@@ -668,7 +669,7 @@ func main() {
   app := cli.NewApp()
 
   app.Flags = []cli.Flag {
-    cli.StringFlag{
+    &cli.StringFlag{
       Name: "lang",
       Value: "english",
       Usage: "language for the greeting",
